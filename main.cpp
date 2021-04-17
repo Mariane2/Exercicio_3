@@ -7,7 +7,7 @@ int main() {
 
 // Declaração das variáveis
 
- int N;              // Quantidade de letras da palavra
+ float N;            // Quantidade de letras da palavra
  int n_teclas[50];   // Número da tecla referente a letra desejada
  char hashtag;       // Armazena o caracter #
  char equal;         // Armazena o caracter =
@@ -24,9 +24,18 @@ int main() {
                       {'W' ,'X' ,'Y', 'Z'}};
 
   // Leitura da quantidade de letras da palavra:                    
-  std::cout << "Entre com a quantidade de letras da palavra:\n"; 
+  std::cout << "Entre com a quantidade de letras da palavra (máximo 50 letras):\n"; 
   std::cin >> N;
   std::cout<<"\n";
+  
+  // Se N é um valor abaixo de 0 ou maior que 50, pede-se novamente o dado até estar dentro do esperado,
+  while((N>=50)||(N<=0)){
+  
+  std::cout << "Quantidade não permitida! Entre com a quantidade de letras da palavra (máximo 50 letras):\n";
+  std::cin >> N;
+  std::cout<<"\n";
+
+  }
 
   // Entrada de dados no modelo #2=1
   std::cout << "Entre com os dados: '#' + 'numero da tecla' + '=' + 'numero de vezes'. \n (Exemplo: #2=1) \n";
